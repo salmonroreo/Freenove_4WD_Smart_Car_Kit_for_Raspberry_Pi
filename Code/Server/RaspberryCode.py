@@ -30,3 +30,5 @@ finally:
 line = Infrared()
 
 line.read_one_infrared(self, channel: int)
+
+hi
