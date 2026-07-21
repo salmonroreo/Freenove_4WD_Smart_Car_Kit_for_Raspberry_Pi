@@ -10,16 +10,16 @@ PWM = Ordinary_Car()
 try:
     while True:
         direction = input("Enter direction (w/a/s/d/e): ")
-        if direction == "s":
-            PWM.set_motor_model(2000,2000,2000,2000)       #Forward
         if direction == "w":
-            PWM.set_motor_model(-2000,-2000,-2000,-2000)   #Back
-        if direction == "d":
-            PWM.set_motor_model(-2000,-2000,2000,2000)     #Left 
-        if direction == "a":
-            PWM.set_motor_model(2000,2000,-2000,-2000)     #Right    
-        if direction == "e":
-            PWM.set_motor_model(0,0,0,0)                   #Stop
+            PWM.set_motor_model(-2000, -2000, -2000, -2000)  # Forward
+        elif direction == "s":
+            PWM.set_motor_model(2000, 2000, 2000, 2000)      # Back
+        elif direction == "a":
+            PWM.set_motor_model(2000, 2000, -2000, -2000)    # Left
+        elif direction == "d":
+             PWM.set_motor_model(-2000, -2000, 2000, 2000)    # Right
+        elif direction == "e":
+            PWM.set_motor_model(0, 0, 0, 0) 
 except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
     print ("\nEnd of program")
 finally:
@@ -30,5 +30,3 @@ finally:
 line = Infrared()
 
 line.read_one_infrared(self, channel: int)
-
-hi
