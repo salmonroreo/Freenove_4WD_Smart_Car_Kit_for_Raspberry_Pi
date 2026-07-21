@@ -1,7 +1,7 @@
 import time
 from pca9685 import PCA9685
 
-class Ordinary_Car:
+class Ordinary_Car():
     def __init__(self):
         self.pwm = PCA9685(0x40, debug=True)
         self.pwm.set_pwm_freq(50)
@@ -73,9 +73,8 @@ class Ordinary_Car:
     def close(self):
         self.set_motor_model(0,0,0,0)
         self.pwm.close()
-
-if __name__=='__main__':
-    PWM = Ordinary_Car()          
+PWM = Ordinary_Car()  
+if __name__=='__main__':     
     try:
         PWM.set_motor_model(2000,2000,2000,2000)       #Forward
         time.sleep(1)
@@ -90,4 +89,3 @@ if __name__=='__main__':
         print ("\nEnd of program")
     finally:
         PWM.close()
-
